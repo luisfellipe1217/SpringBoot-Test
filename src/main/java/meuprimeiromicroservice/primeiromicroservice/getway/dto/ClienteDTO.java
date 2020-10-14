@@ -5,9 +5,11 @@
  */
 package meuprimeiromicroservice.primeiromicroservice.getway.dto;
 
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 public class ClienteDTO {
     
     private String name;

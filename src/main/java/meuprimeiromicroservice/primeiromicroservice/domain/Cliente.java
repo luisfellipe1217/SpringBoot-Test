@@ -18,10 +18,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 
-public class Cliente {   
+public class Cliente {  
+
     
     @Id
-    @GeneratedValue
+    @GeneratedValue    
     private Long id;
     
     @Column(name = "name", length = 255, nullable = false)
