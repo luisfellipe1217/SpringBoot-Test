@@ -10,11 +10,9 @@ import lombok.extern.log4j.Log4j2;
 import meuprimeiromicroservice.primeiromicroservice.domain.Cliente;
 import meuprimeiromicroservice.primeiromicroservice.getway.dto.ClienteDTO;
 import meuprimeiromicroservice.primeiromicroservice.service.CreateClienteService;
-import org.apache.logging.log4j.message.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -31,8 +29,7 @@ public class ClienteResources {
         
         log.info("meu cliente é" + clientedto.getName());
         
-        createClienteService.execute(Cliente.builder()
-                .id(clientedto.getId())
+        createClienteService.execute(Cliente.builder()                
                 .name(clientedto.getName())
                 .build());
         
@@ -40,7 +37,7 @@ public class ClienteResources {
     
     @GetMapping("meu/cliente")
     public ClienteDTO getCliente(){
-        return ClienteDTO.builder().id(1L).name("Luis").build();        
+        return ClienteDTO.builder().name("Luis").build();        
     
     }
 }

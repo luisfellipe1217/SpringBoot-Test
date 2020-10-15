@@ -5,6 +5,8 @@
  */
 package meuprimeiromicroservice.primeiromicroservice.getway.dto;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Data;
 
@@ -12,16 +14,9 @@ import lombok.Data;
 @Builder
 public class ClienteDTO {
     
-    private String name;
-    private Long id;
-
-    public ClienteDTO(String name, Long id) {
-        this.name = name;
-        this.id = id;
-    }
-
-    public ClienteDTO() {
-    }
-    
-    
+    @NotNull
+    @NotEmpty
+    private String name;    
+    private Long id;       
+   
 }

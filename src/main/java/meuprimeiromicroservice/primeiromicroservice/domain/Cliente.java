@@ -17,14 +17,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-
-public class Cliente {  
-
+public class Cliente { 
     
     @Id
     @GeneratedValue    
     private Long id;
     
     @Column(name = "name", length = 255, nullable = false)
-    private String name;
+    private String name;    
+    
+    
 }

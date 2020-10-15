@@ -7,6 +7,8 @@ package meuprimeiromicroservice.primeiromicroservice.service;
 
 import lombok.extern.log4j.Log4j2;
 import meuprimeiromicroservice.primeiromicroservice.domain.Cliente;
+import meuprimeiromicroservice.primeiromicroservice.getway.repository.ClienteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,10 +18,16 @@ import org.springframework.stereotype.Service;
  @Service
  @Log4j2
 public class CreateClienteService {
-   
-     public void execute(Cliente cliente){
      
-         log.info("Gravando Cleinte...");
+     
+     @Autowired
+     private ClienteRepository clienteRepository;
+   
+     public void execute(Cliente cliente){       
+              
+         log.info("Gravando Cleinte...");         
+         clienteRepository.save(cliente);
+         log.info("Cliente gerado com o ID=" + cliente.getId());
      }
     
 }
